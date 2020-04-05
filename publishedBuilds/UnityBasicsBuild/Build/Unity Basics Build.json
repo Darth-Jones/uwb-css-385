@@ -1,0 +1,12 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Unity Playground",
+"dataUrl": "Unity Basics Build.data.unityweb",
+"wasmCodeUrl": "Unity Basics Build.wasm.code.unityweb",
+"wasmFrameworkUrl": "Unity Basics Build.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#292728"
+}
