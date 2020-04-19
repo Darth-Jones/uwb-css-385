@@ -1,9 +1,9 @@
 {
 "companyName": "DefaultCompany",
 "productName": "hero-start",
-"dataUrl": "FlightScene.data.unityweb",
-"wasmCodeUrl": "FlightScene.wasm.code.unityweb",
-"wasmFrameworkUrl": "FlightScene.wasm.framework.unityweb",
+"dataUrl": "FlightSceneBuild.data.unityweb",
+"wasmCodeUrl": "FlightSceneBuild.wasm.code.unityweb",
+"wasmFrameworkUrl": "FlightSceneBuild.wasm.framework.unityweb",
 "TOTAL_MEMORY": 268435456,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
