@@ -28,12 +28,12 @@ public class HeroBehavior : MonoBehaviour {
 
     //Checks angle of attack and peforms a check on location to create bounce
     //effect
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("Collision");
-        if (collision.gameObject.name.Contains("Wall"))
+        if (col.gameObject.name.Contains("Wall"))
         {
-            transform.up = Vector2.Reflect(transform.up, collision.GetContact(0).normal);
+            transform.up = Vector2.Reflect(transform.up, col.GetContact(0).normal);
         }
     }
 
