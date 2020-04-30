@@ -11,6 +11,9 @@ public class ShooterBar : MonoBehaviour
     private GameObject theBar;
     private RectTransform theBarRectTransform;
 
+
+    // JAMES CHANGED THIS AND PUSHED!!!
+
     // Start is called before the first frame update
     void Start()
     {
