@@ -40,10 +40,8 @@ public class HeroBehavior : MonoBehaviour {
     //Allows the player to hit the W,S, and P keys to change velocity
     private void ChangeSpeed()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-            mHeroSpeed += 1;
-        if (Input.GetKey(KeyCode.DownArrow))
-            mHeroSpeed -= 1;
+        
+        mHeroSpeed += Input.GetAxis("Vertical");
         if (Input.GetKey(KeyCode.P))
             mHeroSpeed = 0;
     }
@@ -51,7 +49,7 @@ public class HeroBehavior : MonoBehaviour {
     //Allows the player to hit the A and D keys to change direction 
     private void TurnDirection()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))      
             rb2d.MoveRotation(rb2d.rotation + kHeroRotateSpeed * Time.deltaTime);
         if (Input.GetKey(KeyCode.D)) 
             rb2d.MoveRotation(rb2d.rotation - kHeroRotateSpeed * Time.deltaTime);
