@@ -30,5 +30,10 @@ public class EnemyBehavior : MonoBehaviour {
 			transform.up = Vector2.Reflect(transform.up, collision.GetContact(0).normal);
 			
 		}
+		if (collision.gameObject.name.Contains("Hero"))
+		{
+			Destroy(gameObject);
+
+		}
 	}
 }
