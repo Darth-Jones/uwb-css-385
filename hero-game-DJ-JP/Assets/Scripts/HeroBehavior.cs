@@ -4,7 +4,7 @@ using System.Collections;
 
 public class HeroBehavior : MonoBehaviour {
 
-    // public EggStatSystem mEggStat = null;
+    public bool mouseControl = false;
     private float mHeroSpeed = 20f;
     private const float kHeroRotateSpeed = 22f;
     private Rigidbody2D rb2d;
@@ -22,8 +22,22 @@ public class HeroBehavior : MonoBehaviour {
 
     }
 
+    //Determines if the motion of the hero is based on mouse postion or by
+    //mHeroSpeed
     private void UpdateMotion() {
-        rb2d.MovePosition(rb2d.position + (Vector2)(transform.TransformDirection(Vector3.up) * mHeroSpeed) * Time.deltaTime);
+
+        Vector3 mousePos;
+
+        if (Input.GetKeyDown(KeyCode.M))
+            mouseControl = !mouseControl;
+
+        if (mouseControl) {
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0f;
+            rb2d.MovePosition(mousePos);
+        }
+        else
+            rb2d.MovePosition(rb2d.position + (Vector2)(transform.TransformDirection(Vector3.up) * mHeroSpeed) * Time.deltaTime);
     }
 
     //Checks angle of attack and peforms a check on location to create bounce
@@ -40,7 +54,6 @@ public class HeroBehavior : MonoBehaviour {
     //Allows the player to hit the W,S, and P keys to change velocity
     private void ChangeSpeed()
     {
-        
         mHeroSpeed += Input.GetAxis("Vertical");
         if (Input.GetKey(KeyCode.P))
             mHeroSpeed = 0;
