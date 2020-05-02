@@ -13,6 +13,10 @@ public class EggTimer : MonoBehaviour
         Destroy(gameObject, eggExperation);
     }
 
+    void update()
+    {
+
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name.Contains("Wall"))
@@ -27,5 +31,7 @@ public class EggTimer : MonoBehaviour
             HealthAndLocation eHealth = collision.gameObject.GetComponent<HealthAndLocation>();
             eHealth.updateHealth();
         }
+
+        
     }
 }

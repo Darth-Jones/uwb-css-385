@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemySpawn;
 
     private bool randomWayFinding = false;
-
+    public GameObject uiCounter;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,10 @@ public class EnemySpawn : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.J))
+        {
             randomWayFinding = !randomWayFinding;
+            uiCounter.GetComponent<UITracking>().PathChange();
+        }
 
         //Makes sure there are 10 enemies on the screen at all times
         if (GameObject.FindGameObjectsWithTag("Enemy").Length < 10)
@@ -45,8 +48,6 @@ public class EnemySpawn : MonoBehaviour
             //Kind of rough would like to improve
             Vector2 randomVector = new Vector2(Random.Range(-70,70),Random.Range(-40,40));
             enemy.transform.position = randomVector;
-            
-
         }
 
     }

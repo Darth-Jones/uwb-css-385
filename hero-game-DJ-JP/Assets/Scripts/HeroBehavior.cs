@@ -8,7 +8,9 @@ public class HeroBehavior : MonoBehaviour {
     private float mHeroSpeed = 20f;
     private const float kHeroRotateSpeed = 22f;
     private Rigidbody2D rb2d;
+    public int touched = 0;
 
+    public GameObject uiCounter;
     // Use this for initialization
     void Start () {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -19,7 +21,6 @@ public class HeroBehavior : MonoBehaviour {
         UpdateMotion();
         ChangeSpeed();
         TurnDirection();
-
     }
 
     //Determines if the motion of the hero is based on mouse postion or by
@@ -29,7 +30,10 @@ public class HeroBehavior : MonoBehaviour {
         Vector3 mousePos;
 
         if (Input.GetKeyDown(KeyCode.M))
+        {
+            uiCounter.GetComponent<UITracking>().ModeChange();
             mouseControl = !mouseControl;
+        }
 
         if (mouseControl) {
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -48,6 +52,11 @@ public class HeroBehavior : MonoBehaviour {
         if (col.gameObject.name.Contains("Wall"))
         {
             transform.up = Vector2.Reflect(transform.up, col.GetContact(0).normal);
+        }
+        if (col.gameObject.name.Contains("nemy"))
+        {
+            uiCounter.GetComponent<UITracking>().newTouch();
+            Destroy(col.gameObject);
         }
     }
 

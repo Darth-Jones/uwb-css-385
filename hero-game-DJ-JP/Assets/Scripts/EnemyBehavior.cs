@@ -28,12 +28,6 @@ public class EnemyBehavior : MonoBehaviour {
 		if (collision.gameObject.name.Contains("Wall"))
 		{
 			transform.up = Vector2.Reflect(transform.up, collision.GetContact(0).normal);
-			
-		}
-		if (collision.gameObject.name.Contains("Hero"))
-		{
-			Destroy(gameObject);
-
-		}
+		}	
 	}
 }
