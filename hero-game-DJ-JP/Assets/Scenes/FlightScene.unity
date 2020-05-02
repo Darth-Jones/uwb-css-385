@@ -214,6 +214,7 @@ MonoBehaviour:
   - {fileID: 1245539995}
   enemySpawn: {fileID: 8683854784703305307, guid: dc515dc71dbae4b7786b5de7a7ca5fca,
     type: 3}
+  uiCounter: {fileID: 256230716}
 --- !u!1 &248756379
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,8 +226,8 @@ GameObject:
   - component: {fileID: 248756381}
   - component: {fileID: 248756380}
   - component: {fileID: 248756384}
-  - component: {fileID: 248756383}
   - component: {fileID: 248756382}
+  - component: {fileID: 248756383}
   m_Layer: 0
   m_Name: B_Walk
   m_TagString: Untagged
@@ -331,10 +332,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 248756379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d8653cb85528b4d8a5e2512e8852c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f439fe18bd62941ba64440c128ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 4
 --- !u!114 &248756384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +349,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visible: 1
+--- !u!1 &256230716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 256230718}
+  - component: {fileID: 256230717}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &256230717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256230716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66dbc5084ed3a5b449002acd0926467c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &256230718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256230716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.127184, y: 15.355436, z: -1.0348988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294595414
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,8 +475,8 @@ GameObject:
   - component: {fileID: 375275659}
   - component: {fileID: 375275661}
   - component: {fileID: 375275660}
-  - component: {fileID: 375275663}
   - component: {fileID: 375275662}
+  - component: {fileID: 375275663}
   m_Layer: 0
   m_Name: E_Walk
   m_TagString: Untagged
@@ -550,10 +594,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 375275658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d8653cb85528b4d8a5e2512e8852c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f439fe18bd62941ba64440c128ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 4
 --- !u!1 &436558218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,9 +1223,9 @@ GameObject:
   - component: {fileID: 938493965}
   - component: {fileID: 938493964}
   - component: {fileID: 938493963}
-  - component: {fileID: 938493966}
   - component: {fileID: 938493967}
   - component: {fileID: 938493968}
+  - component: {fileID: 938493966}
   m_Layer: 0
   m_Name: A_Walk
   m_TagString: Untagged
@@ -1273,7 +1317,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 938493962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d8653cb85528b4d8a5e2512e8852c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f439fe18bd62941ba64440c128ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 4
@@ -1420,6 +1464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseControl: 0
+  touched: 0
+  uiCounter: {fileID: 256230716}
 --- !u!61 &950339371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1645,8 +1691,8 @@ GameObject:
   - component: {fileID: 1238057197}
   - component: {fileID: 1238057199}
   - component: {fileID: 1238057198}
-  - component: {fileID: 1238057201}
   - component: {fileID: 1238057200}
+  - component: {fileID: 1238057201}
   m_Layer: 0
   m_Name: D_Walk
   m_TagString: Untagged
@@ -1764,10 +1810,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1238057196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d8653cb85528b4d8a5e2512e8852c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f439fe18bd62941ba64440c128ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 4
 --- !u!1 &1244373031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,8 +1951,8 @@ GameObject:
   - component: {fileID: 1245539996}
   - component: {fileID: 1245539998}
   - component: {fileID: 1245539997}
-  - component: {fileID: 1245540000}
   - component: {fileID: 1245539999}
+  - component: {fileID: 1245540000}
   m_Layer: 0
   m_Name: F_Walk
   m_TagString: Untagged
@@ -2024,10 +2070,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1245539995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d8653cb85528b4d8a5e2512e8852c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f439fe18bd62941ba64440c128ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 4
 --- !u!1 &1621666361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,8 +2085,8 @@ GameObject:
   - component: {fileID: 1621666363}
   - component: {fileID: 1621666362}
   - component: {fileID: 1621666366}
-  - component: {fileID: 1621666365}
   - component: {fileID: 1621666364}
+  - component: {fileID: 1621666365}
   m_Layer: 0
   m_Name: C_Walk
   m_TagString: Untagged
@@ -2145,10 +2191,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621666361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d8653cb85528b4d8a5e2512e8852c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f439fe18bd62941ba64440c128ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 0
+  maxHP: 4
 --- !u!114 &1621666366
 MonoBehaviour:
   m_ObjectHideFlags: 0

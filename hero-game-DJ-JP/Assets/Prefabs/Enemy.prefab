@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8683854784703305308}
   - component: {fileID: 8683854784703305311}
   - component: {fileID: 8683854784703305309}
-  - component: {fileID: 114175455058773522}
+  - component: {fileID: 114305364020894728}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -164,7 +164,7 @@ MonoBehaviour:
   waypointMode: 1
   turnRate: 2
   lastWaypoint: 0
---- !u!114 &114175455058773522
+--- !u!114 &114305364020894728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8683854784703305307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d8653cb85528b4d8a5e2512e8852c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f439fe18bd62941ba64440c128ea1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 1

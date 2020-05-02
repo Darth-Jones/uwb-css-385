@@ -28,7 +28,7 @@ public class EggTimer : MonoBehaviour
                     collision.gameObject.name.Contains("nemy") ) 
         {
             Destroy(gameObject);
-            HealthAndLocation eHealth = collision.gameObject.GetComponent<HealthAndLocation>();
+            Health eHealth = collision.gameObject.GetComponent<Health>();
             eHealth.updateHealth();
         }
 

@@ -12,7 +12,7 @@ public class UITracking : MonoBehaviour
 
 
     private string[] mode = { "Mouse", "Keyboard" };
-    private int  modeIndex;
+    private int modeIndex;
 
     private string[] path = { "Random", "Sequential" };
     private int pathIndex;
@@ -34,7 +34,7 @@ public class UITracking : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(5, 0, 1000, 50), "WAYPOINTS: " + path[pathIndex] + " | ENEMIES: Touched: " + touched + " Egged: " + egged + 
+        GUI.Label(new Rect(5, 0, 1000, 50), "WAYPOINTS: " + path[pathIndex] + " | ENEMIES: Touched: " + touched + " Egged: " + egged +
             " Total: " + (touched + egged) + " | EGG COUNT: " + eggCount + " | MODE: " + mode[modeIndex]);
     }
 
