@@ -20,5 +20,12 @@ public class EggTimer : MonoBehaviour
             //Destroies the egg on collision with walls
             Destroy(gameObject);
         }
+        else if ( collision.gameObject.name.Contains("Walk") || 
+                    collision.gameObject.name.Contains("nemy") ) 
+        {
+            Destroy(gameObject);
+            HealthAndLocation eHealth = collision.gameObject.GetComponent<HealthAndLocation>();
+            eHealth.updateHealth();
+        }
     }
 }
