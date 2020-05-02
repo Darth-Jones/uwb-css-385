@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class HealthAndLocation : MonoBehaviour
 {
-   // public int maxHP;
-    private int currentHP;
-
+    public float maxHP;
+    private float currentHP;
+    private float opacity;
     // Start is called before the first frame update
     void Start()
     {
-        currentHP = 4;
+        currentHP = maxHP;
+        opacity = 1.0f;
     }
 
     // Update is called once per frame
@@ -22,21 +23,30 @@ public class HealthAndLocation : MonoBehaviour
 
     public void updateHealth()
     {
-        if (tag.Contains("nemy"))
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            currentHP--;
-            
-            // apply the fade witht he alpha channel thingy
 
-            if (currentHP == 0)
+        currentHP--;
+
+        if (currentHP == 0)
+        {
+            if (tag.Contains("nemy"))
+            {
+                Destroy(gameObject);
+            }
+            else
             {
                 changeLocation();
             }
         }
+        else
+        {
+            opacity -= (1.0f / maxHP);
+            SpriteRenderer sprite = gameObject.GetComponent<SpriteRenderer>();
+            sprite.color = new Color(1f, 1f, 1f, opacity);
+        }
+        // apply the fade witht he alpha channel thingy
+
+            
+        
 
     }
     void changeLocation()
@@ -66,6 +76,9 @@ public class HealthAndLocation : MonoBehaviour
 
         Vector2 newPosition = new Vector2(xPos, yPos);
         transform.position = newPosition;
-        currentHP = 4;
+        SpriteRenderer sprite = gameObject.GetComponent<SpriteRenderer>();
+        opacity = 1f;
+        sprite.color = new Color(1f, 1f, 1f, opacity);
+        currentHP = maxHP;
     }
 }
