@@ -23,13 +23,12 @@ public class EggLauncher : MonoBehaviour
 	public bool relativeToRotation = true;
 
 	public float timeOfLastSpawn;
-
-
 	// Use this for initialization
 	void Start()
 	{
 		newCreationRate = creationRate;
 		timeOfLastSpawn = -creationRate;
+		
 	}
 
 
@@ -51,9 +50,6 @@ public class EggLauncher : MonoBehaviour
 			{
 				rigidbody2D.AddForce(actualEggDirection * shootSpeed, ForceMode2D.Impulse);
 			}
-
-
-
 			timeOfLastSpawn = Time.time;
 		}
 	}
