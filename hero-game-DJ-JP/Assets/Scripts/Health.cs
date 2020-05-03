@@ -56,47 +56,15 @@ public class Health : MonoBehaviour
     }
     void changeLocation()
     {
-        float xPos = transform.position.x;
-        float yPos = transform.position.y;
+        float xTrans = Random.Range(-15, 16);
+        float yTrans = Random.Range(-15, 16);
 
-
-        Vector2 newPosition;
-        do
-        {
-            newPosition = GetNewLocation(xAnchor, yAnchor);
-        }
-        while (newPosition.x == xPos && newPosition.y == yPos);
-        // need to make sure they are still in bounds
-
-        transform.position = newPosition;
+        transform.position = new Vector2(xTrans, yTrans);
         currentHP = maxHP;
 
         opacity = 1f;
         SpriteRenderer sprite = gameObject.GetComponent<SpriteRenderer>();
         sprite.color = new Color(1f, 1f, 1f, opacity);
-    }
-
-    private Vector2 GetNewLocation(float xPos, float yPos)
-    {
-        if (Random.Range(0, 2) == 0)
-        {
-            xPos += 15;
-        }
-        else
-        {
-            xPos -= 15;
-        }
-
-        if (Random.Range(0, 2) == 0)
-        {
-            yPos += 15;
-        }
-        else
-        {
-            yPos -= 15;
-        }
-
-        return new Vector2(xPos, yPos);
     }
 }
 
