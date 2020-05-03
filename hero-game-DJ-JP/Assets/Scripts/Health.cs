@@ -59,6 +59,9 @@ public class Health : MonoBehaviour
         float xTrans = Random.Range(-15, 16);
         float yTrans = Random.Range(-15, 16);
 
+        xTrans += xAnchor;
+        yTrans += yAnchor;
+
         transform.position = new Vector2(xTrans, yTrans);
         currentHP = maxHP;
 
